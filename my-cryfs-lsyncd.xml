@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>cryfs-lsyncd</Name>
+  <Repository>corruptsector/cryfs-lsyncd</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1638685855</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="sync source" Target="/cryfs/sync" Default="" Mode="rw" Description="Source Folder to sync to a remote cryfs location" Type="Path" Display="always" Required="true" Mask="false">/mnt/remotes/HOMEASSISTANT_media/</Config>
+  <Config Name="appdata" Target="/cryfs/config" Default="/mnt/user/appdata/cryfs-lsyncd" Mode="rw" Description="App data location. This is very important if you ever need to move to a new cryfs location. Without the config file you will be unable to decrypt" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/cryfs-lsyncd</Config>
+  <Config Name="Destination Folder" Target="/cryfs/base" Default="" Mode="rw" Description="This is the base for the cryfs mount. This will contain all the encrypted files." Type="Path" Display="always" Required="true" Mask="false">/mnt/remotes/10.253.1.1_corruptsector/cryfs/</Config>
+  <Config Name="Cryfs Password" Target="CRYFS_PWD" Default="password" Mode="" Description="Password for cryfs. Do not lose. Files will not be recoverable" Type="Variable" Display="always" Required="true" Mask="true">;G+293}T!Dbj'&gt;p%</Config>
+</Container>
