@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 RUN apt-get update && apt-get install cryfs lsyncd -y
-RUN mkdir /cryfs /cryfs/mount
+RUN mkdir /cryfs /tmp/mount
 
 ENV DATA_DIR="/cryfs/config"
 ENV CRYFS=""

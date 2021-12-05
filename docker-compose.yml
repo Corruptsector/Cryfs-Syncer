@@ -1,14 +1,11 @@
 version: "3"
 services:
   cryfs:
-    build: .
+    image: corruptsector/cryfs-lsyncd
     privileged: true
     volumes:
       - /cryfs/base:/cryfs/base
       - /cryfs/config:/cryfs/config
       - /cryfs/sync:/cryfs/sync
     environment:
-      - MOUNT_DIR=/cryfs/mount
-      - SYNC_DIR=/cryfs/sync
-      - BASE_DIR=/cryfs/base
       - CRYFS_PWD=password
