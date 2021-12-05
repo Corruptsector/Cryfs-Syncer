@@ -29,7 +29,9 @@ fi
 echo "Attempting to mount ${BASE_DIR} into ${MOUNT_DIR}"
 
 if echo "${CRYFS_PWD}" | cryfs -c /cryfs/config/cryfs.cfg --logfile /cryfs/config/cryfs.log --blocksize ${CRYFS_BLOCKSIZE} ${CRYFS_EXTRA_PARAMETERS} ${BASE_DIR} ${MOUNT_DIR}; then
-    echo "########## Starting CryFS encryption ##########"
+    echo "########## Started CryFS encryption ##########"
+    lsyncd -rsync /cryfs/sync/ /cryfs/mount/
+    echo "########## Started lsyncd encryption ##########"
     sleep infinity
 else
     echo "########## Couldn't start CryFS encryption ##########"

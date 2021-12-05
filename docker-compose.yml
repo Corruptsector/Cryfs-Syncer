@@ -4,10 +4,11 @@ services:
     build: .
     privileged: true
     volumes:
-      - /home/aswood/cryfs/base:/cryfs/base
-      - /home/aswood/cryfs/mount:/cryfs/mount
-      - /home/aswood/cryfs/config:/cryfs/config
+      - /cryfs/base:/cryfs/base
+      - /cryfs/config:/cryfs/config
+      - /cryfs/sync:/cryfs/sync
     environment:
       - MOUNT_DIR=/cryfs/mount
+      - SYNC_DIR=/cryfs/sync
       - BASE_DIR=/cryfs/base
       - CRYFS_PWD=password
