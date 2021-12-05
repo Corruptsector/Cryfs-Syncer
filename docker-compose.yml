@@ -1,0 +1,13 @@
+version: "3"
+services:
+  cryfs:
+    build: .
+    privileged: true
+    volumes:
+      - /home/aswood/cryfs/base:/cryfs/base
+      - /home/aswood/cryfs/mount:/cryfs/mount
+      - /home/aswood/cryfs/config:/cryfs/config
+    environment:
+      - MOUNT_DIR=/cryfs/mount
+      - BASE_DIR=/cryfs/base
+      - CRYFS_PWD=password
