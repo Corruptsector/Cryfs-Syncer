@@ -1,10 +1,22 @@
-name: ci
+name: Docker Image CI
 
 on:
   push:
-    branches: master
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag corruptsector/cryfs-lsyncd:latest
+
   login:
     runs-on: ubuntu-latest
     steps:
