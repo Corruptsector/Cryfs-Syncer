@@ -4,9 +4,7 @@ __pycache__/
 *$py.class
 
 # CryFS
-base/
-sync/
-config/
+example/
 
 # C extensions
 *.so
