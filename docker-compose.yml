@@ -6,7 +6,8 @@ services:
     volumes:
       - ./example/config:/cryfs/config
       - ./example/sync:/cryfs/sync:ro
-      - ./example/wireguard:/etc/wireguard/wg0.conf:ro
+      - ./example/wg0.conf:/etc/wireguard/wg0.conf:ro
     environment:
       - CRYFS_PWD=password
-      - BASE_DIR=10.253.1.1:/mnt/user/corruptsector/frigate
+      - BASE_DIR=10.253.0.1:/mnt/user/EvilKumara/frigate
+

@@ -15,7 +15,13 @@ ping 10.253.1.1 -c4
 
 echo "########## Setting up nfs Mount ##########"
 # mount 10.253.1.1:/mnt/user/corruptsector /var/backups
-mount ${BASE_DIR} /cryfs/base
+
+if mount ${BASE_DIR} /cryfs/base; then
+    echo "########## Mounted ${BASE_DIR} to /cryfs/base ##########" 
+else
+    echo "########## Couldn't mount ${BASE_DIR} ##########"
+    exit
+fi
 
 if echo "${CRYFS_PWD}" | cryfs -c /cryfs/config/cryfs.cfg --logfile /cryfs/config/cryfs.log --blocksize ${CRYFS_BLOCKSIZE} ${CRYFS_EXTRA_PARAMETERS} /cryfs/base /tmp/mount; then
     echo "########## Started CryFS encryption ##########"   
