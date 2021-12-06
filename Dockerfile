@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-RUN apt-get update && apt-get install cryfs lsyncd -y
+RUN apt-get update && apt-get install cryfs lsyncd wireguard -y
 RUN mkdir /cryfs /tmp/mount
 
 ENV DATA_DIR="/cryfs/config"
