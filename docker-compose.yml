@@ -1,7 +1,7 @@
 version: "3"
 services:
   cryfs:
-    image: corruptsector/cryfs-lsyncd:dev
+    image: corruptsector/cryfs-lsyncd:latest
     privileged: true
     volumes:
       - ./base:/cryfs/base
