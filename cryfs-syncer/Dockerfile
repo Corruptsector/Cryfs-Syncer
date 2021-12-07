@@ -6,4 +6,5 @@ RUN mkdir -p /cryfs/base /tmp/mount
 ENV CRYFS_BLOCKSIZE=262144
 ADD /scripts/ /opt/scripts/
 
-ENTRYPOINT ["/bin/bash", "/opt/scripts/start.sh"]
+RUN chmod +x /opt/scripts/start.sh
+ENTRYPOINT ["/opt/scripts/start.sh"]
