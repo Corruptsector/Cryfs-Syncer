@@ -14,7 +14,7 @@ fi
 
 echo "########## Bringing up Wireguard Tunnel ##########"
 wg-quick up /config/cryfs/wg0.conf
-ping 10.253.1.1 -c4
+ping 10.253.0.1 -c4
 
 echo "########## Setting up nfs Mount ##########"
 if mount ${BASE_DIR} /cryfs/base; then
@@ -32,5 +32,5 @@ if echo "${CRYFS_PWD}" | cryfs -c /config/cryfs/config/cryfs.cfg --logfile /conf
     # sleep infinity
 else
     echo "########## Couldn't start CryFS encryption ##########"
-    exit
+    sleep infinity
 fi
