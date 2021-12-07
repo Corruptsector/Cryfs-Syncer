@@ -1,6 +1,15 @@
 #!/bin/bash
 
-mkdir -p /cryfs/base
+# Setting Variables if not already in environment
+if ![[ -z "$CRYFS_PWD" ]]; then  
+else  
+    CRYFS_PWD=$(bashio::config "CRYFS_PWD") 
+fi  
+
+if ![[ -z "$BASE_DIR" ]]; then  
+else  
+    BASE_DIR=$(bashio::config "BASE_DIR") 
+fi  
 
 export CRYFS_FRONTEND=noninteractive
 if [ -z "$CRYFS_PWD" ]; then
