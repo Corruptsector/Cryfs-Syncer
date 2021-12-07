@@ -14,7 +14,7 @@ fi
 
 echo "########## Bringing up Wireguard Tunnel ##########"
 wg-quick up /config/cryfs/wg0.conf
-ping 10.253.0.1 -c4
+
 
 echo "########## Setting up nfs Mount ##########"
 if mount ${BASE_DIR} /cryfs/base; then

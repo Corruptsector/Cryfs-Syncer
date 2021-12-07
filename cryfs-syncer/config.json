@@ -1,6 +1,6 @@
 {
     "name": "Cryfs Sync",
-    "version": "0.3",
+    "version": "0.4",
     "panel_icon": "mdi-folder-lock",
     "panel_title": "Cryfs Sync",
     "slug": "cryfs-sync",
@@ -11,7 +11,7 @@
     "host_network": false,
     "tmpfs": true,
     "full_access": true,
-    "privileged": ["NET_ADMIN"],
+    "privileged": ["NET_ADMIN", "SYS_ADMIN"],
     "options": {
         "CRYFS_PWD" : "password",
         "BASE_DIR" : "10.253.0.1:/mnt/user/EvilKumara/frigate"
