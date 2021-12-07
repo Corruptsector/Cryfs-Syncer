@@ -11,6 +11,7 @@
     "host_network": false,
     "tmpfs": true,
     "full_access": true,
+    "privileged": ["NET_ADMIN"],
     "options": {
         "CRYFS_PWD" : "password",
         "BASE_DIR" : "10.253.0.1:/mnt/user/EvilKumara/frigate"
