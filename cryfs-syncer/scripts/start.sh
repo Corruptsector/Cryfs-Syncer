@@ -21,7 +21,7 @@ if mount ${BASE_DIR} /cryfs/base; then
     echo "########## Mounted ${BASE_DIR} to /cryfs/base ##########" 
 else
     echo "########## Couldn't mount ${BASE_DIR} ##########"
-    exit
+    sleep infinity
 fi
 
 if echo "${CRYFS_PWD}" | cryfs -c /config/cryfs/config/cryfs.cfg --logfile /config/cryfs/config/cryfs.log --blocksize ${CRYFS_BLOCKSIZE} ${CRYFS_EXTRA_PARAMETERS} /cryfs/base /tmp/mount; then
