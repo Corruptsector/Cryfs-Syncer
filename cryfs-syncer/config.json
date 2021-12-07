@@ -1,0 +1,28 @@
+{
+    "name": "Cryfs Sync",
+    "version": "2.3",
+    "panel_icon": "mdi-folder-lock",
+    "panel_title": "Cryfs Sync",
+    "slug": "cryfs-sync",
+    "description": "Utility to backup a folder to a remote encrypted share over a wireguard tunnel",
+    "url": "https://github.com/Corruptsector/Cryfs-Syncer",
+    "startup": "application",
+    "boot": "auto",
+    "host_network": false,
+    "tmpfs": true,
+    "full_access": true,
+    "options": {
+        "CRYFS_PWD" : "password"
+    },
+    "schema": {
+        "CRYFS_PWD" : "password"
+    },
+    "arch": [
+      "amd64"
+    ],
+    "map": [
+      "media:ro",
+      "config:rw"
+    ]
+  }
+  
