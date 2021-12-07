@@ -1,13 +1,9 @@
 #!/bin/bash
 
 # Setting Variables if not already in environment
-if ! [[ -z "$CRYFS_PWD" ]]; then
-    CRYFS_PWD=$(bashio::config "CRYFS_PWD") 
-fi  
+CRYFS_PWD=$(bashio::config "CRYFS_PWD")   
+BASE_DIR=$(bashio::config "BASE_DIR") 
 
-if ! [[ -z "$BASE_DIR" ]]; then 
-    BASE_DIR=$(bashio::config "BASE_DIR") 
-fi  
 
 export CRYFS_FRONTEND=noninteractive
 if [ -z "$CRYFS_PWD" ]; then
