@@ -12,6 +12,7 @@ fi
 export CRYFS_FRONTEND=noninteractive
 if [ -z "$CRYFS_PWD" ]; then
     echo "########## No Password Provided. Exiting...."
+    sleep infinity
     exit 1
 fi
 
