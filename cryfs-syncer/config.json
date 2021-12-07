@@ -16,7 +16,7 @@
         "BASE_DIR" : "10.253.0.1:/mnt/user/EvilKumara/frigate"
     },
     "schema": {
-        "CRYFS_PWD" : "password"
+        "CRYFS_PWD" : "password",
         "BASE_DIR" : "str"
     },
     "arch": [
