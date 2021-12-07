@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir /cryfs/base
+mkdir -p /cryfs/base
 
 export CRYFS_FRONTEND=noninteractive
 if [ -z "$CRYFS_PWD" ]; then
@@ -9,13 +9,10 @@ if [ -z "$CRYFS_PWD" ]; then
 fi
 
 echo "########## Bringing up Wireguard Tunnel ##########"
-wg-quick up /etc/wireguard/wg0.conf
-
+wg-quick up /config/cryfs/wg0.conf
 ping 10.253.1.1 -c4
 
 echo "########## Setting up nfs Mount ##########"
-# mount 10.253.1.1:/mnt/user/corruptsector /var/backups
-
 if mount ${BASE_DIR} /cryfs/base; then
     echo "########## Mounted ${BASE_DIR} to /cryfs/base ##########" 
 else
@@ -23,11 +20,11 @@ else
     exit
 fi
 
-if echo "${CRYFS_PWD}" | cryfs -c /cryfs/config/cryfs.cfg --logfile /cryfs/config/cryfs.log --blocksize ${CRYFS_BLOCKSIZE} ${CRYFS_EXTRA_PARAMETERS} /cryfs/base /tmp/mount; then
+if echo "${CRYFS_PWD}" | cryfs -c /config/cryfs/config/cryfs.cfg --logfile /config/cryfs/config/cryfs.log --blocksize ${CRYFS_BLOCKSIZE} ${CRYFS_EXTRA_PARAMETERS} /cryfs/base /tmp/mount; then
     echo "########## Started CryFS encryption ##########"   
 
     echo "########## Started lsyncd Sync ##########"
-    lsyncd -nodaemon -log all -rsync /cryfs/sync/ /tmp/mount/
+    lsyncd -nodaemon -log all -rsync /media/frigate/ /tmp/mount/
     # sleep infinity
 else
     echo "########## Couldn't start CryFS encryption ##########"
