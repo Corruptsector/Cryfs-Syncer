@@ -1,4 +1,4 @@
-#!/usr/bin/env bashio
+#!/bin/bash
 
 sleep infinity
 # Setting Variables if not already in environment

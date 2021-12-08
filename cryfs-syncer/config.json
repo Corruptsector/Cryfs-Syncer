@@ -1,6 +1,6 @@
 {
     "name": "Cryfs Sync",
-    "version": "0.7",
+    "version": "0.8",
     "panel_icon": "mdi-folder-lock",
     "panel_title": "Cryfs Sync",
     "slug": "cryfs-sync",
