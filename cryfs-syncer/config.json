@@ -1,6 +1,6 @@
 {
     "name": "Cryfs Sync",
-    "version": "0.8",
+    "version": "0.9",
     "panel_icon": "mdi-folder-lock",
     "panel_title": "Cryfs Sync",
     "slug": "cryfs-sync",
@@ -11,6 +11,7 @@
     "host_network": false,
     "tmpfs": true,
     "full_access": true,
+    "kernel_modules": true,
     "privileged": ["NET_ADMIN", "SYS_ADMIN", "SYS_RAWIO", "SYS_TIME", "SYS_NICE", "SYS_RESOURCE", "SYS_PTRACE", "SYS_MODULE", "DAC_READ_SEARCH"],
     "options": {
         "CRYFS_PWD" : "password",
