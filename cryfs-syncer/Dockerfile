@@ -1,4 +1,4 @@
-FROM ghcr.io/home-assistant/amd64-base-debian
+FROM ubuntu
 
 RUN apt-get update && apt-get install cryfs lsyncd wireguard net-tools iproute2 nfs-common iputils-ping -y
 RUN mkdir -p /cryfs/base /tmp/mount 

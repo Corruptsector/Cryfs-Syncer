@@ -1,8 +1,9 @@
 #!/usr/bin/env bashio
 
+sleep infinity
 # Setting Variables if not already in environment
-CRYFS_PWD=$(bashio::config "CRYFS_PWD")   
-BASE_DIR=$(bashio::config "BASE_DIR") 
+# CRYFS_PWD=$(bashio::config "CRYFS_PWD")   
+# BASE_DIR=$(bashio::config "BASE_DIR") 
 
 
 export CRYFS_FRONTEND=noninteractive
